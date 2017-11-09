@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Clown云端处理</title>
+		<script type="text/javascript" src="js/angular.js" ></script>
+		<link rel="stylesheet" href="css/clown.css" />
+		<link rel="stylesheet" href="font_3nt0p2z43rs02j4i/iconfont.css" />
+	</head>
+	<body ng-app="App" ng-controller="Ctrl">
+			<header class="container" style="background: #eaeaea;">
+			<div class="headerbox">
+				<p>Clown云端管理</p>
+			</div>
+			<div class="headerbox1" ng-click="change1()">
+				<i class="icon-shouye iconfont"></i>
+				<p><a href="#/" style="text-decoration: none;">首页</a></p>
+				<i class="iconfont" 
+					ng-class="{'icon-xiangyoujiantou':isUp1,'icon-xiangxiajiantou':!isUp1}"></i>
+			</div>
+			<ul class="headerul" ng-show="flag1">
+					<li><i class="icon-xiala iconfont"></i><a href="#/first"><p>弹幕管理</p></a></li>
+					<li><i class="icon-xiala iconfont"></i><a href="#/second"><p>申诉管理</p></a></li>
+					<li><i class="icon-xiala iconfont"></i><a href="#/fans"><p>上传管理</p></a></li>
+					<li><i class="icon-xiala iconfont"></i><a href="#/pl"><p>评论管理</p></a></li>
+			</ul>
+			<div class="headerbox1" ng-click="change2()">
+				<i class="icon-wodedingdan iconfont"></i>
+				<p>稿件管理</p>
+				<i class="iconfont" 
+					ng-class="{'icon-xiangyoujiantou':isUp2,'icon-xiangxiajiantou':!isUp2}"></i>
+			</div>
+			<ul class="headerul"ng-show="flag2">
+					<li><i class="icon-xiala iconfont"></i><a href="#/third"><p>全部投稿</p></a></li>
+					<li><i class="icon-xiala iconfont"></i><a href="#/shanchu"><p>删除投稿区</p></a></li>
+					<li><i class="icon-xiala iconfont"></i><a href="#/pbi"><p>屏蔽投稿区</p></a></li>
+					<li><i class="icon-xiala iconfont"></i><a href="#/toushu"><p>投诉稿件区</p></a></li>
+			</ul>
+			<div class="headerbox1" ng-click="change3()">
+				<i class="icon-shezhi iconfont"></i>
+				<p>个人中心</p>
+				<i class="iconfont" 
+					ng-class="{'icon-xiangyoujiantou':isUp3,'icon-xiangxiajiantou':!isUp3}"></i>
+			</div>
+			<ul class="headerul"ng-show="flag3">
+					<li><i class="icon-xiala iconfont"></i><p>设置</p></li>
+					<li><i class="icon-xiala iconfont"></i><p>测试</p></li>
+					<li><i class="icon-xiala iconfont"></i><p>占位</p></li>
+					<li><i class="icon-xiala iconfont"></i><p>占位</p></li>
+			</ul>
+			<div class="headerbox1" ng-click="change4()">
+				<i class="icon-xiaoxizhongxin iconfont"></i>
+				<p>问题反馈</p>
+				<i></i>
+			</div>
+			<div class="headerbox1" ng-click="change4()">
+				<i></i>
+				<p>联系我们</p>
+				<i></i>
+			</div>
+		</header>
+		<section>
+			<div class="firstmenu">
+			<ul>
+				<li>主站</li>
+				<li>画友</li>
+				<li>游戏中心</li>
+				<li>直播</li>	
+				<li>周边</li>
+				<li>移动端</li>
+				<li>BML</li>
+				<li>萌战</li>
+				<li><i class="icon-yanjing iconfont"></i></li>
+				<li class="firstli">游客，请登录</li>
+			</ul>
+			</div>
+			<div class="section-box1">
+				<input type="search" placeholder="搜索" ng-model="search"/>
+			</div>
+			<div  class="routebox" ng-view>
+			</div>
+		</section>
+		<script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
+		<script type="text/javascript" src="js/angular-route.js" ></script>
+		<script type="text/javascript" src="js/angular-sanitize.js" ></script>
+		<script src="js/echarts.js"></script>
+		<script type="text/javascript" src="js/clown.js" ></script>
+		<script type="text/javascript" src="js/base.js" ></script>
+	</body>
+</html>

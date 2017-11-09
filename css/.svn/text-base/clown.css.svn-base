@@ -1,0 +1,162 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+	font-family: "微软雅黑";
+}
+body{
+	width: 1200px;
+	margin: 0 auto;
+	
+}
+header{
+	overflow:scroll;
+	overflow-x: hidden;
+	position: absolute;
+	height: 100%;
+	top: 0;	
+	bottom: 0;
+}
+header li{
+	color: #FFFFFF;
+	opacity: 0.8;
+}
+.headerbox{
+	width: 200px;
+	height: 60px;
+	background:-webkit-gradient(linear, 120 0,0 bottom, from(#4294fa), to(rgba(132, 45, 250, 0.6)));  
+}
+.headerbox p{
+	font-size: 22px;
+	color: #fff;
+	font-weight: 500;
+	text-align: center;
+	line-height: 60px;
+	text-shadow: 5px 5px 5px rgba(0,0,0,.5);
+}
+.headerbox1 i,.headerbox1 p{
+	color: #FFFDEF;
+	line-height: 60px;
+	display: inline-block;
+}
+.headerbox1 i{
+	flex: 1;
+	font-weight: 700;
+}
+.headerbox1 p{
+	flex: 4;
+}
+.headerbox1{
+	padding: 0 10px;
+	display: flex;
+	width: 200px;
+	height: 60px;
+	background: #525154;
+}
+.headerbox1:hover{
+	background: #2e2e2e;
+}
+.headerul{	
+	width: 200px;
+	background: #747474;
+}
+.headerul li{
+	height: 60px;
+	line-height: 60px;
+	padding: 0 40px;
+	width: 200px;
+}
+.headerul li:hover{
+	background: #4e4e4e;
+}
+.headerul li i{
+	margin-right: 20px;
+	/*-webkit-transform:skew(-90deg) !important;
+	        transform:skew(-90deg);*/
+}
+.headerul li p{
+	display: inline-block;
+}
+section{
+	padding-left: 20px;
+	margin-left: 220px;
+}
+.section-box1 input{
+	width: 200px;
+	height: 30px;
+	border-radius: 7px 7px;
+	margin-top: 15px;
+	padding: 0 10px;
+	margin-left: 70px;
+}
+.firstmenu li{
+	float: left;
+	margin-left: 20px;
+	line-height: 60px;
+}	
+.routebox{
+	margin-top: 30px;
+	margin-left: 20px;
+}
+a{
+	color: #fff;
+}
+
+//
+
+.secondbox{
+	position: relative;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	
+}
+.secondbox img{
+	width: 100px;
+	margin-top: 30px;
+}
+.secondbox p{
+	margin-bottom: 10px;
+}
+.footer-text{
+	display: inline-block;
+}
+.secondbox i{
+	margin-left: 20px;
+	margin-right: 10px;
+}	
+.routebox{
+	width: 870px;
+	overflow:scroll;
+	overflow-x: hidden;
+	position: absolute;
+	height: 90%;
+	top: 6%;	
+	bottom: 0;
+}
+.secondbox input{
+	position: absolute;
+	right: 50px;
+	margin-top: 50px;
+	padding: 2px;
+}
+.secondbox input:last-child{
+	position: absolute;
+	right: 5px;
+	margin-top: 50px;
+	padding: 2px;
+}
+.footer-box{
+	height: 120px;
+}
+.footer-box:hover{
+	background: #e5e5e5;
+}
+.firstmenu ul li{
+	cursor: pointer;
+}
+.firstmenu ul li:hover{
+	color: #fafafa;
+	text-shadow: 1px 1px 2px #2E2E2E;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<p class="firsttext" style="font-size: 24px;">游客，请登录</p>
+		</div>
+		<form>
+			<i style="font-size: 24px;" class="icon-wodejuhuasuan iconfont"></i><input type="text" placeholder="请登录" style="margin-left: 20px;margin-bottom: 30px;margin-top: 30px;width: 200px;height: 40px;padding-left: 20px;"/>
+			<br />
+			<i style="font-size: 24px;" class="icon-suo iconfont"></i><input type="password" placeholder="请输入密码" style="margin-left: 20px;margin-bottom: 30px;width: 200px;height: 40px;padding-left: 20px;"/>
+			<br />
+			<span class="span1" style="cursor: pointer;margin-left: 50px;padding: 5px;margin-right: 20px;background: #4294FA;color: #fff;border-radius: 12px 12px;display: inline-block;width: 70px;text-align: center;">登录</span>
+			<a style="color: #000; text-decoration: none;" href="#/load"><span class="span2" style="cursor: pointer;;margin-bottom: 20px;margin-left: 20px;padding: 5px;margin-right: 20px;background: #4294FA;color: #fff;border-radius: 12px 12px;display: inline-block;width: 70px;text-align: center;">注册</span></a>
+			<br />
+			<a style="color: #000; text-decoration: none;" href="#/load"><p style="opacity: 0.8;margin-left: 40px;font-size: 14px;display: inline-block;">点击这里注册</p></a>
+			<a style="color: #000; text-decoration: none;" href="#/load"><p style="opacity: 0.8;margin-left: 50px;font-size: 14px;display: inline-block;">忘记密码？</p></a>
+		</form>
+	</body>	
+</html>
