@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="093a251d-e88a-4345-bcda-c4ced3fc4b71" name="clown" url="http://59.110.225.109">
+        <fileTransfer host="59.110.225.109" port="22" rootFolder="/usr/local/src/deeptht_yt_web/WEB/zk" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

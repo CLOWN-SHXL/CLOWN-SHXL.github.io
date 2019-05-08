@@ -1,0 +1,294 @@
+ body,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ dl,
+ dt,
+ dd,
+ ul,
+ ol,
+ li,
+ th,
+ td,
+ p,
+ blockquote,
+ pre,
+ form,
+ fieldset,
+ legend,
+ input,
+ button,
+ textarea,
+ hr {
+   margin: 0;
+   padding: 0;
+   font-size: 0.3rem;
+   user-select: none;
+ }
+ 
+ body {
+   background: #fafafa;
+ }
+ 
+ .headerbox {
+   width: 100%;
+   height: 260px;
+   position: relative;
+   overflow: hidden;
+   background: url(../icon/backimg.jpg) no-repeat;
+   background-size: cover;
+ }
+ 
+ .headerimg {
+   width: 100%;
+   opacity: 0.8;
+ }
+ 
+ .mytext {
+   position: absolute;
+   top: 80px;
+   text-align: center;
+   width: 100%;
+   font-size: 0.6rem;
+   color: #fff;
+   text-shadow: 1px 2px 5px rgba(0, 0, 0, .8);
+   letter-spacing: 2px;
+ }
+ 
+ .indistinct_box {
+   background: url(../icon/backimg.jpg) no-repeat fixed;
+   width: 100%;
+   height: 100%;
+   font-size: 0.3rem;
+   line-height: 50px;
+   color: #fff;
+   filter: blur(10px);
+   /*opacity: 0.9;*/
+ }
+ 
+ .headerbtn {
+   width: 2rem;
+   height: 40px;
+   position: absolute;
+   top: 160px;
+   left: 50%;
+   margin-left: -1rem;
+   text-align: center;
+   border-radius: 20px;
+   overflow: hidden;
+ }
+ 
+ .indistinct_text {
+   letter-spacing: 2px;
+   position: absolute;
+   width: 100%;
+   line-height: 40px;
+   top: 0;
+   left: 0;
+   font-size: 0.3rem;
+   color: #fff;
+   text-shadow: 1px 2px 5px rgba(0, 0, 0, .5);
+ }
+ 
+ .bodybox {
+   margin-top: 10px;
+   width: 100%;
+   overflow: hidden;
+ }
+ 
+ .albutitle {
+   display: block;
+   background: #fff;
+   padding: 0 0.2rem;
+   margin-bottom: 10px;
+ }
+ 
+ .albumtext {
+   display: inline;
+   color: #323743;
+   font-size: 0.3rem;
+   line-height: 0.7rem;
+ }
+ 
+ .albumicon {
+   line-height: 0.7rem;
+   display: inline-block;
+   margin-top: -3px;
+   width: 0.5rem;
+   vertical-align: middle;
+   margin-right: 5px;
+ }
+ 
+ .article_listbox {
+   padding: 0 0.2rem;
+   position: relative;
+ }
+ 
+ .albumlist {
+   background: #fff;
+   position: relative;
+   border-radius: 14px;
+   float: left;
+   display: inline-block;
+   width: 3.3rem;
+   height: 3.3rem;
+   box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+   margin-right: 0.2rem;
+   margin-bottom: 0.2rem;
+   overflow: hidden;
+ }
+ 
+ .albumlist:nth-of-type(2n) {
+   margin-right: 0;
+ }
+ 
+ .albumimg {
+   width: 100%;
+   height: auto;
+ }
+ 
+ .album_imgbox {
+   height: 2rem;
+   overflow: hidden;
+   border-bottom: 1px solid #323743;
+   box-sizing: border-box;
+ }
+ 
+ .albumtexts {
+   width: 3rem;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   margin: 0.15rem 0.2rem;
+ }
+ 
+ .tabname {
+   position: absolute;
+   right: 0.2rem;
+   bottom: 0.2rem;
+   background: #449d44;
+   width: 0.8rem;
+   font-size: 0.25rem;
+   height: 0.4rem;
+   color: #fff;
+   text-align: center;
+   border-radius: 0.2rem;
+   line-height: 0.41rem;
+   box-sizing: border-box;
+ }
+ 
+ .albumnum {
+   position: absolute;
+   top: 0;
+   right: 0;
+   color: #fff;
+   width: 0.7rem;
+   height: 0.6rem;
+   background: rgba(0, 0, 0, .5);
+   text-align: center;
+   line-height: 0.6rem;
+   font-size: 0.3rem;
+ }
+ 
+ .playicon {
+   width: 1.2rem;
+   position: absolute;
+   top: 0.2rem;
+   left: 50%;
+   margin-left: -0.6rem;
+ }
+ 
+ .times {
+   text-align: center;
+   width: 100%;
+   font-size: 0.3rem;
+   margin-top: 1.5rem;
+   display: none;
+ }
+ 
+ .voiceicon {
+   width: 0.3rem;
+   vertical-align: middle;
+   margin-left: 0.3rem;
+   margin-top: -3px;
+ }
+ 
+ .voicetext {
+   display: inline-block;
+ }
+ 
+ .voicetitle {
+   width: 100%;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   margin: 0.15rem 0;
+   margin-left: 0.25rem;
+   text-align: left;
+ }
+ 
+ .menu {
+   width: 0.35rem;
+   position: absolute;
+   bottom: 0.25rem;
+   left: 0.2rem;
+ }
+ 
+ .addicon {
+   width: 1.6rem;
+   opacity: 0.1;
+   position: absolute;
+   top: 0.4rem;
+   left: 50%;
+   margin-left: -0.8rem;
+ }
+ 
+ .addboxs {
+   box-shadow: none!important;
+ }
+ 
+ .addtext {
+   opacity: 0.4;
+   width: 100%;
+   text-align: center;
+   position: absolute;
+   bottom: 0.6rem;
+   font-size: 0.3rem;
+ }
+ 
+ .layerbox {
+   width: 100%;
+   position: fixed;
+   z-index: 2;
+   text-align: center;
+   bottom: 60px;
+   transition: all 200ms ease-in;
+   opacity: 0;
+   display: none;
+ }
+ 
+ .layertext {
+   display: inline-block;
+   color: #fff;
+   font-size: 14px;
+   line-height: 40px;
+   padding: 0 10px;
+   height: 40px;
+   background: rgba(0, 0, 0, .3);
+   border-radius: 10px;
+ }
+ 
+ .clearfloat:after {
+   display: block;
+   clear: both;
+   content: "";
+   visibility: hidden;
+   height: 0
+ }
+ 
+ .clearfloat {
+   zoom: 1
+ }

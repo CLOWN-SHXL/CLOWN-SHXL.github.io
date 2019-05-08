@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>喜结连理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--禁止百度转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--safari导航栏颜色样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <!--ios标题名称-->
+    <meta name="apple-mobile-web-app-title" content="喜结连理"/>
+    <link rel="stylesheet" type="text/css" href="css/animation.css" />
+  </head>
+
+  <body>
+    <script>
+      (function() {
+        function w() {
+          var r = document.documentElement;
+          var a = r.getBoundingClientRect().width; //获取当前设备的宽度
+          if(a > 720) { //720不固定，根据设计稿的宽度定
+            a = 720;
+          }
+          rem = a / 7.2;
+          r.style.fontSize = rem + "px"
+          console.log(a)
+        }
+        w();
+        window.addEventListener("resize", function() { //监听横竖屏切换
+          w()
+        }, false);
+      })();
+    </script>
+    <div class="bgimg"></div>
+    <div id="wrapper">
+      <div id="scroller">
+        <div class="boximg">
+          <ul>
+            <li>
+              <img src="img/album1/1.jpg" />
+            </li>
+            <li>
+              <img src="img/album3/1.jpg" />
+            </li>
+            <li>
+              <img src="img/album2/2.jpg" />
+            </li>
+            <li>
+              <img src="img/album3/5.jpg" />
+            </li>
+            <li>
+              <img src="img/album1/2.jpg" />
+            </li>
+            <li>
+              <img src="img/album2/4.jpg" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="camerabtn">
+      <img src="icon/Carrera.png" class="cameraicon" />
+      <p class="cameratext">进入展厅</p>
+    </div>
+    <div class="mybtn">
+      <img src="icon/myicon.png" class="myicon" />
+    </div>
+    <!--<div id="start" style="width: 150px;height: 80px;color: red;z-index: 4;">开始录音</div> 
+    <div id = "end" style="width: 150px;height: 80px;color: red;" onclick="uploadVoice()">上传录音</div>  -->
+    <!--<audio id="musicbox" src="voice/new.wav" controls>浏览器不支持播放</audio>-->
+
+    <!--<script src="https://zeptojs.com/zepto.min.js" type="text/javascript"></script>-->
+    <script src="js/voice.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script>
+      var ajaxurl = location.href.split("#")[0]
+      console.log(ajaxurl)
+      $.ajax({
+        type: "get",
+        url: "",
+        contentType: "application/json",
+        dataType: 'jsonp',
+        success: function(res) {
+          wx.config({
+            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会
+            timestamp: res.timestamp, // 必填，生成签名的时间戳
+            nonceStr: res.nonceStr, // 必填，生成签名的随机串
+            signature: res.signature, // 必填，签名，见附录1
+            jsApiList: ['startRecord', 'stopRecord', 'uploadVoice'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+          });
+        }
+      });
+      wx.ready(function() {
+        console.log("调用成功")
+        //注册微信播放录音结束事件【一定要放在wx.ready函数内】
+        //    wx.onVoicePlayEnd({
+        //        success: function (res) {
+        //            stopWave();
+        //        }
+        //    });
+      })
+      wx.error(function(res) {
+        console.log(res);
+      });
+      //假设全局变量已经在外部定义
+      var START = ""
+      var END = ""
+      //按下开始录音
+      $('#start').on('touchstart', function(event) {
+        console.log("按下录音")
+        event.preventDefault();
+        START = new Date().getTime();
+        recordTimer = setTimeout(function() {
+          console.log("记录1")
+          wx.startRecord({
+            success: function() {
+              localStorage.rainAllowRecord = 'true';
+            },
+            cancel: function() {
+              alert('用户拒绝授权录音');
+            }
+          });
+        }, 300);
+      });
+      //松手结束录音
+      $('#start').on('touchend', function(event) {
+        console.log("放开录音")
+        event.preventDefault();
+        END = new Date().getTime();
+
+        if((END - START) < 300) {
+          END = 0;
+          START = 0;
+          //小于300ms，不录音
+          console.log("录音时间过短")
+          clearTimeout(recordTimer);
+        } else {
+          console.log("记录3")
+          wx.stopRecord({
+            success: function(res) {
+              voice.localId = res.localId;
+              //              uploadVoice()
+              console.log("成功")
+            },
+            fail: function(res) {
+              alert(JSON.stringify(res));
+            }
+          });
+        }
+      });
+
+      //上传录音
+      function uploadVoice() {
+        console.log("上传录音")
+        //调用微信的上传录音接口把本地录音先上传到微信的服务器
+        //不过，微信只保留3天，而我们需要长期保存，我们需要把资源从微信服务器下载到自己的服务器
+        wx.uploadVoice({
+          localId: voice.localId, // 需要上传的音频的本地ID，由stopRecord接口获得
+          isShowProgressTips: 1, // 默认为1，显示进度提示
+          success: function(res) {
+            //把录音在微信服务器上的id（res.serverId）发送到自己的服务器供下载。
+            $.ajax({
+              url: '后端处理上传录音的接口',
+              type: 'post',
+              data: JSON.stringify(res),
+              dataType: "json",
+              success: function(data) {
+                alert('文件已经保存到七牛的服务器'); //这回，我使用七牛存储
+              },
+              error: function(xhr, errorType, error) {
+                console.log(error);
+              }
+            });
+          }
+        });
+      }
+
+      //  按钮滑动
+      var isClick = true;
+      $('.mybtn').each(function(index) {
+        $(this).on('touchstart', function(evt) {
+          var e = event || evt;
+          e.preventDefault(); //阻止其他事件
+
+          isClick = true;
+        }).on('touchmove', function(evt) {
+          var e = event || evt;
+          e.preventDefault(); //阻止其他事件
+                 // 如果这个元素的位置内只有一个手指的话
+                 //console.log(e.targetTouches)
+                
+          if(e.targetTouches.length == 1) {  
+            var touch = e.targetTouches[0];  // 把元素放在手指所在的位置
+            //          console.log(touch.pageX-$(this).width()/2)
+            if($(window).width() - touch.pageX - parseInt($(this).width()) / 2 > 0) {
+              if(touch.pageX - $(this).width() / 2 > 0) {
+                $(this).css("left", (touch.pageX - parseInt($(this).width()) / 2 + 'px')); 
+              }
+            }
+            if(touch.pageY - $(this).height() / 2 > 0) {
+              $(this).css("top", (touch.pageY - parseInt($(this).height()) / 2 + 'px'));  
+            }
+          }
+          isClick = false;
+        }).on('touchend', function(evt) {
+          var e = event || evt;
+          e.preventDefault(); //阻止其他事件
+
+          if(isClick == true) {
+            window.location.href = "my.html"
+          }
+        })
+      });
+      $("#camerabtn").on("touchstart").on("touchend", function(e) {
+      window.location.href = "3Dscene.html"
+      })
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8">
+    <title>相册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--禁止百度转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--safari导航栏颜色样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!--ios标题名称-->
+    <meta name="apple-mobile-web-app-title" content="喜结连理">
+    <link rel="stylesheet" type="text/css" href="css/album.css"/>
+  </head>
+	<body>
+	  <script>
+      (function() {
+        function w() {
+          var r = document.documentElement;
+          var a = r.getBoundingClientRect().width; //获取当前设备的宽度
+          if(a > 720) { //720不固定，根据设计稿的宽度定
+            a = 720;
+          }
+          rem = a / 7.2;
+          r.style.fontSize = rem + "px"
+          console.log(a)
+        }
+        w();
+        window.addEventListener("resize", function() { //监听横竖屏切换
+          w()
+        }, false);
+      })();
+    </script>
+    
+    <div class="albumbox">
+      <div class="list">
+      </div>
+    	<div class="list">
+      </div>
+    </div>
+    <script type="text/javascript"  src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/album.js"></script>
+    
+	</body>
+</html>

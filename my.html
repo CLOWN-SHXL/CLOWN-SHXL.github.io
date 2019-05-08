@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>我的</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--禁止百度转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--safari导航栏颜色样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!--ios标题名称-->
+    <meta name="apple-mobile-web-app-title" content="喜结连理">
+    <link rel="stylesheet" type="text/css" href="css/my.css" />
+  </head>
+
+  <body>
+    <script>
+      (function() {
+        function w() {
+          var r = document.documentElement;
+          var a = r.getBoundingClientRect().width; //获取当前设备的宽度
+          if(a > 720) { //720不固定，根据设计稿的宽度定
+            a = 720;
+          }
+          rem = a / 7.2;
+          r.style.fontSize = rem + "px"
+          console.log(a)
+        }
+        w();
+        window.addEventListener("resize", function() { //监听横竖屏切换
+          w()
+        }, false);
+      })();
+    </script>
+    <header>
+      <div class="headerbox">
+        <!--<img src="icon/backimg.png" class="headerimg"/>-->
+        <p class="mytext">#记忆空间</p>
+        <div class="headerbtn">
+          <div class="indistinct_box">
+
+          </div>
+          <p class="indistinct_text">礼物</p>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="bodybox">
+        <div class="albutitle">
+          <img src="icon/album.png" class="albumicon" />
+          <p class="albumtext">时光相册</p>
+        </div>
+        <div class="article_listbox clearfloat">
+          <div class="albumlist albumbox">
+            <div class="album_imgbox">
+              <img src="img/album1/2.jpg" / class="albumimg">
+              <p class="albumnum">5<span style="font-size: 0.15rem;margin-left: 3px;">张</span></p>
+            </div>
+            <p class="albumtexts">和睦一族</p>
+            <p class="tabname">家庭</p>
+            <img src="icon/menu.png" / class="menu">
+          </div>
+
+         <div class="albumlist albumbox">
+            <div class="album_imgbox">
+              <img src="img/album2/2.jpg" / class="albumimg">
+              <p class="albumnum">5<span style="font-size: 0.15rem;margin-left: 3px;">张</span></p>
+            </div>
+            <p class="albumtexts">甜蜜时光</p>
+            <p class="tabname">家庭</p>
+            <img src="icon/menu.png" / class="menu">
+          </div>
+           <div class="albumlist albumbox">
+            <div class="album_imgbox">
+              <img src="img/album3/5.jpg" / class="albumimg">
+              <p class="albumnum">9<span style="font-size: 0.15rem;margin-left: 3px;">张</span></p>
+            </div>
+            <p class="albumtexts">清交素友</p>
+            <p class="tabname">家庭</p>
+            <img src="icon/menu.png" / class="menu">
+          </div>
+
+          <!--新建相册-->
+          <div class="albumlist addboxs addalbum">
+            <img src="icon/add.png" class="addicon" />
+            <p class="addtext">新建相册</p>
+          </div>
+        </div>
+      </div>
+
+      <!--分割线-->
+
+      <div class="albutitle">
+        <img src="icon/voiceicon.png" class="albumicon" />
+        <p class="albumtext">音苑留声机</p>
+      </div>
+      <div class="article_listbox clearfloat">
+        <div class="albumlist">
+          <div class="album_imgbox">
+            <img src="icon/play2.png" / class="playicon">
+            <p class="times"><span class="starttime">00:00</span>-<span class="endtime">00:00</span></p>
+          </div>
+          <p class="voicetitle">来自亲人的问候</p>
+          <img src="icon/voicetype.png" class="voiceicon" />
+          <p class="voicetext">声源：家人</p>
+        </div>
+        <!--新建录音-->
+        <div class="albumlist addboxs addvoice">
+          <img src="icon/add.png" class="addicon" />
+          <p class="addtext">新建录音</p>
+        </div>
+      </div>
+      <div style="width: 100%;height: 20px;">
+      <div class="layerbox">
+        <p class="layertext">Sorry，This function is In development.</p>
+      </div>
+    </section>
+    <audio id="musicboxs" src="voice/new.wav" >浏览器不支持播放</audio>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/my.js"></script>
+  </body>
+
+</html>
